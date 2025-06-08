@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>หลอนนนน...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 2em;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 1em 2em;
+      background: red;
+      color: black;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div>😱 คลิกถ้ากล้า...</div>
+    <button onclick="startCreepy()">จิ้มเลย...</button>
+  </div>
+
+  <audio id="creepy" loop src="creepy.mp3"></audio>
+
+  <script>
+    function startCreepy() {
+      const audio = document.getElementById('creepy');
+      audio.volume = 1;
+      audio.play().catch(_=>{});
+
+      document.body.innerHTML = '<div>คุณตกหลุมแล้วคร้าบ! 😈</div>';
+      document.body.style.color = 'lime';
+    }
+  </script>
+</body>
+</html>
